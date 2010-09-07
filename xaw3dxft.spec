@@ -1,5 +1,5 @@
 %define name	xaw3dxft
-%define version	1.1
+%define version	1.2
 %define release	1
 
 %define major 6
@@ -63,27 +63,20 @@ You should install Xaw3dxft-devel if you are going to develop
 applications using the Xaw3dxft widget set.
 
 %prep
-%setup -q -c
- 
+%setup -q -n %{name}
+
 %build
-cd xaw3dxft-1.1
 xmkmf -a
 
 # fix compiler flags
 perl -pi -e 's|(CDEBUGFLAGS =.*)|CDEBUGFLAGS = %{optflags}|g' Makefile
 perl -pi -e 's|(CXXDEBUGFLAGS =.*)|CXXDEBUGFLAGS = %{optflags}|g' Makefile
 
-# fix overlinking
-sed -i -e 's|$(SMLIB)||g' Makefile
-sed -i -e 's|$(ICELIB)||g' Makefile
-sed -i -e 's|$(XPMLIB)||g' Makefile
-sed -i -e 's|$(XPLIB)||g' Makefile
-
+export SHLIBGLOBALSFLAGS="%{ldflags}"
 %make
 
 %install
 rm -rf %{buildroot}
-cd xaw3dxft-1.1
 %makeinstall_std
 
 %clean
@@ -95,6 +88,6 @@ rm -rf %{buildroot}
 
 %files -n %{develname}
 %defattr(-,root,root)
-%doc xaw3dxft-1.1/README*
+%doc README*
 %{_libdir}/*.so
 %{_includedir}/X11/Xaw3dxft
