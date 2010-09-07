@@ -12,6 +12,7 @@ Version:	%{version}
 Release:	%mkrel %{release}
 Group:		System/Libraries
 BuildRequires:	X11-devel
+BuildRequires:	libxp-devel
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	imake
