@@ -1,6 +1,7 @@
 %define name	xaw3dxft
 %define version	1.2
 %define release	1
+%define subrel	1
 
 %define major 6
 %define libname %mklibname %{name} %{major}
@@ -18,6 +19,7 @@ BuildRequires:	flex
 BuildRequires:	imake
 BuildRequires:	gccmakedep
 Source0:	http://downloads.sourceforge.net/project/sf-xpaint/sf-xpaint/%{name}-%{version}/%{name}-%{version}.tar.bz2
+Patch0:		xaw3dxft-1.2-sync_sources_with_xaw3dxft_shipped_with_xpaint_2.9.6.2.patch
 Url:		http://sourceforge.net/projects/sf-xpaint/
 License:	MIT
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -65,6 +67,7 @@ applications using the Xaw3dxft widget set.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 xmkmf -a
