@@ -92,3 +92,26 @@ rm -rf %{buildroot}
 %doc README*
 %{_libdir}/*.so
 %{_includedir}/X11/Xaw3dxft
+
+
+%changelog
+* Tue Nov 09 2010 Jani Välimaa <wally@mandriva.org> 1.3-1mdv2011.0
++ Revision: 595491
+- new version 1.3
+- drop now unneeded patch
+
+* Sun Oct 03 2010 Jani Välimaa <wally@mandriva.org> 1.2-1.1mdv2011.0
++ Revision: 582654
+- add patch to sync sources with xaw3dxft shipped with xpaint 2.9.6.2
+
+* Tue Sep 07 2010 Jani Välimaa <wally@mandriva.org> 1.2-1mdv2011.0
++ Revision: 576584
+- add missing BR
+- new version 1.2
+- use LDFLAGS
+
+* Sun Mar 28 2010 Jani Välimaa <wally@mandriva.org> 1.1-1mdv2010.1
++ Revision: 528551
+- import xaw3dxft
+
+
