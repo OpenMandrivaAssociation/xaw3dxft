@@ -1,6 +1,6 @@
 %define name	xaw3dxft
 %define version	1.3
-%define release	1
+%define release	2
 
 %define major 6
 %define libname %mklibname %{name} %{major}
