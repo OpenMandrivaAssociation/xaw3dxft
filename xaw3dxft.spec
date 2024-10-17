@@ -18,7 +18,7 @@ BuildRequires:	flex
 BuildRequires:	imake
 BuildRequires:	gccmakedep
 Source0:	http://downloads.sourceforge.net/project/sf-xpaint/sf-xpaint/%{name}-%{version}/%{name}-%{version}.tar.bz2
-Url:		http://sourceforge.net/projects/sf-xpaint/
+Url:		https://sourceforge.net/projects/sf-xpaint/
 License:	MIT
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
